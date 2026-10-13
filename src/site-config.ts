@@ -170,7 +170,7 @@ export const config: Config = {
   // Home page content — edit this and the sections render automatically
   home: {
     hero: {
-      tagline: '一个游戏重度爱好者的博客',
+      tagline: '折腾小插件 / 记录生活',
       location: 'China / ChangSha',
       about:
         '你好，我是小宁。这里是我的自留地，写写日常、放放自制的小插件，欢迎认真看完这里，认识一下我。\n\n博客还在慢慢搭，慢慢来。',
