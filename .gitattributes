@@ -10,3 +10,4 @@
 *.avif binary
 *.ico binary
 *.svg text eol=lf
+*.apk binary
