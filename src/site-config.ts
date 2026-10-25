@@ -159,7 +159,7 @@ export const config: Config = {
       { title: 'RSS', url: '/rss.xml' }
     ],
     social: {
-      github: { label: 'GitHub', url: 'https://github.com/selenaflora927-dot' }
+      github: { label: 'GitHub', url: 'https://github.com/Thanatophilia' }
     }
   },
 

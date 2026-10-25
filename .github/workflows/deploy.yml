@@ -37,7 +37,7 @@ jobs:
         run: pnpm build
         env:
           # 用户站点（仓库 = 用户名.github.io）→ 根路径部署，地址不带 /blog/
-          SITE_URL: https://selenaflora927-dot.github.io
+          SITE_URL: https://thanatophilia.github.io
           BASE_PATH: ''
 
       - name: Upload artifact

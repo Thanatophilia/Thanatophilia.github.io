@@ -64,9 +64,9 @@ language: 中文
 
 ## 下载
 
-**📦 仓库地址：[github.com/selenaflora927-dot/jimeng-ime](https://github.com/selenaflora927-dot/jimeng-ime)**
+**📦 仓库地址：[github.com/Thanatophilia/jimeng-ime](https://github.com/Thanatophilia/jimeng-ime)**
 
-直接下载：[jimeng-1.0.0-debug.apk](https://github.com/selenaflora927-dot/jimeng-ime/releases/download/jimeng-ime/jimeng-1.0.0-debug.apk)
+直接下载：[jimeng-1.0.0-debug.apk](https://github.com/Thanatophilia/jimeng-ime/releases/download/jimeng-ime/jimeng-1.0.0-debug.apk)
 
 需要 Android 8.0 以上，只支持 arm64。
 
