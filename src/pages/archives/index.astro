@@ -6,18 +6,18 @@ import { getBlogCollection, groupByYear, postUrl } from '@/utils/server'
 const groups = groupByYear(await getBlogCollection())
 ---
 
-<BaseLayout title="Archives" description="Posts grouped by year">
+<BaseLayout title="归档" description="按年份归档的文章">
   <div class="animate not-prose">
     <header class="mb-8">
-      <h1 class="font-serif text-3xl font-semibold">Archives</h1>
+      <h1 class="font-serif text-3xl font-semibold">归档</h1>
       <p class="mt-2 text-sm text-ink-soft">
-        {[...groups.values()].reduce((n, g) => n + g.length, 0)} posts
+        {[...groups.values()].reduce((n, g) => n + g.length, 0)} 篇文章
       </p>
     </header>
 
     {
       groups.size === 0 ? (
-        <p class="py-12 text-center text-ink-soft">No posts yet.</p>
+        <p class="py-12 text-center text-ink-soft">暂无文章。</p>
       ) : (
         <div class="flex flex-col gap-10">
           {[...groups.entries()].map(([year, posts]) => (
@@ -25,7 +25,7 @@ const groups = groupByYear(await getBlogCollection())
               <h2 class="mb-4 flex items-baseline gap-3 font-serif text-2xl font-semibold">
                 {year}
                 <span class="font-mono text-sm font-normal text-ink-soft">
-                  {posts.length} posts
+                  {posts.length} 篇文章
                 </span>
               </h2>
               <ul class="flex flex-col divide-y divide-line border-y border-line">
@@ -40,7 +40,7 @@ const groups = groupByYear(await getBlogCollection())
                         datetime={post.data.publishDate.toISOString()}
                         class="w-[5ch] shrink-0 whitespace-nowrap font-mono text-xs text-ink-soft sm:w-24"
                       >
-                        {formatDate(post.data.publishDate, 'en-US', {
+                        {formatDate(post.data.publishDate, 'zh-CN', {
                           month: '2-digit',
                           day: '2-digit'
                         })}

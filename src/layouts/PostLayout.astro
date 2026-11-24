@@ -64,7 +64,7 @@ const jsonLd = {
       <!-- Post header -->
       <header class="mb-6 xl:mb-9">
         <h1 class="font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-          {data.draft && <span class="me-2 text-accent">[Draft]</span>}
+          {data.draft && <span class="me-2 text-accent">[草稿]</span>}
           {data.title}
         </h1>
 
@@ -75,12 +75,12 @@ const jsonLd = {
             updated && (
               <>
                 <span aria-hidden="true">·</span>
-                <span>Updated {formatDate(updated)}</span>
+                <span>更新于 {formatDate(updated)}</span>
               </>
             )
           }
           <span aria-hidden="true">·</span>
-          <span>{minutesRead} min read</span>
+          <span>阅读约 {minutesRead} 分钟</span>
           {
             config.pageview.server && (
               <>
@@ -133,22 +133,22 @@ const jsonLd = {
 
       <!-- Post footer -->
       <footer class="not-prose mt-14 border-t border-line pt-6">
-        <p class="font-serif text-sm italic text-ink-soft">— End of article. Thanks for reading.</p>
+        <p class="font-serif text-sm italic text-ink-soft">— 全文完，感谢阅读。</p>
         <div class="mt-4 flex flex-wrap items-center gap-3">
           <a href={withBase('/blog')} class="chip" data-astro-prefetch>
             <span class="i-lucide-arrow-left size-3.5" aria-hidden="true"></span>
-            Back to blog
+            返回博客
           </a>
           <a href="#top" class="chip">
             <span class="i-lucide-arrow-up size-3.5" aria-hidden="true"></span>
-            Back to top
+            返回顶部
           </a>
         </div>
 
         <!-- Prev / next -->
         {
           (newerPost || olderPost) && (
-            <nav class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2" aria-label="Post navigation">
+            <nav class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2" aria-label="文章导航">
               {newerPost && (
                 <a
                   href={postUrl(newerPost.id)}
@@ -160,7 +160,7 @@ const jsonLd = {
                       class="i-lucide-arrow-left size-3.5 transition-transform duration-300 group-hover:-translate-x-1"
                       aria-hidden="true"
                     />
-                    Previous
+                    上一篇
                   </span>
                   <span class="line-clamp-2 text-sm font-medium group-hover:text-accent">
                     {newerPost.data.title}
@@ -178,7 +178,7 @@ const jsonLd = {
                       class="i-lucide-arrow-right size-3.5 transition-transform duration-300 group-hover:translate-x-1"
                       aria-hidden="true"
                     />
-                    Next
+                    下一篇
                   </span>
                   <span class="line-clamp-2 text-sm font-medium group-hover:text-accent">
                     {olderPost.data.title}

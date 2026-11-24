@@ -26,10 +26,10 @@ export function withBase(path: string): string {
   return `${normalized}${path.replace(/^\//, '')}`
 }
 
-/** Format a date using the site locale, e.g. "August 16, 2026". */
+/** Format a date in Chinese, e.g. "2026年8月16日". */
 export function formatDate(
   date: Date,
-  locale = 'en-US',
+  locale = 'zh-CN',
   options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
 ): string {
   return new Intl.DateTimeFormat(locale, options).format(date)

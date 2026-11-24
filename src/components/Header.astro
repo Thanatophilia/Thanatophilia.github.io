@@ -22,7 +22,7 @@ function isActive(link: string): boolean {
     </a>
 
     <!-- Nav -->
-    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
+    <nav class="hidden items-center gap-1 md:flex" aria-label="主导航">
       {
         config.header.menu.map((item) => (
           <a
@@ -42,8 +42,8 @@ function isActive(link: string): boolean {
         config.search.enabled && (
           <a
             href={withBase('/search')}
-            title="Search"
-            aria-label="Search"
+            title="搜索"
+            aria-label="搜索"
             class="icon-btn"
             data-astro-prefetch
           >
@@ -56,8 +56,8 @@ function isActive(link: string): boolean {
         id="palette-toggle"
         type="button"
         class="icon-btn"
-        aria-label="Switch palette (ink / fresh)"
-        title="Switch palette"
+        aria-label="切换配色（墨色／清新）"
+        title="切换配色"
       >
         <span class="i-lucide-feather icon-ink size-5" aria-hidden="true"></span>
         <span class="i-lucide-leaf icon-fresh hidden size-5" aria-hidden="true"></span>
@@ -67,8 +67,8 @@ function isActive(link: string): boolean {
         id="theme-toggle"
         type="button"
         class="icon-btn"
-        aria-label="Toggle theme"
-        title="Toggle theme"
+        aria-label="切换明暗主题"
+        title="切换明暗主题"
       >
         <span class="i-lucide-monitor icon-system size-5" aria-hidden="true"></span>
         <span class="i-lucide-sun icon-light size-5" aria-hidden="true"></span>
@@ -81,7 +81,7 @@ function isActive(link: string): boolean {
 <!-- Mobile nav: in normal flow (scrolls away), only the slim bar stays sticky -->
 <nav
   class="mobile-nav not-prose mx-auto flex max-w-5xl gap-1 overflow-x-auto px-5 pb-2 sm:px-8 md:hidden"
-  aria-label="Primary navigation"
+  aria-label="主导航"
 >
   {
     config.header.menu.map((item) => (

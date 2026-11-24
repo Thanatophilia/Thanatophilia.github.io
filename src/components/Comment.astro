@@ -11,11 +11,11 @@ const enabled = config.comment.provider === 'waline' && server !== ''
 
 {
   enabled && (
-    <section class="not-prose mt-14" aria-label="Comments">
+    <section class="not-prose mt-14" aria-label="评论">
       <link rel="stylesheet" href={walineStylesheet} />
       <h2 class="mb-4 flex items-center gap-2 font-serif text-lg font-semibold">
         <span class="i-lucide-message-square size-4 text-accent" aria-hidden="true" />
-        Comments
+        评论
       </h2>
       <div id="waline" />
     </section>
@@ -43,9 +43,9 @@ const enabled = config.comment.provider === 'waline' && server !== ''
       // Single heart "like" reaction — styling lives in waline.css
       reaction: [withBase('/icons/heart-item.svg')],
       locale: {
-        reaction0: 'Like(s)',
+        reaction0: '赞',
         reactionTitle: '这篇文章对你有帮助吗？',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
+        placeholder: '欢迎留言，无需登录。填写邮箱即可接收回复通知。'
       }
     })
   }

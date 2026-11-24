@@ -42,11 +42,11 @@ export async function updatePageview(element: HTMLElement | null): Promise<void>
   const number = element.querySelector<HTMLElement>('[data-pageview-value]')
   if (!number) return
   element.dataset.pageviewState = 'loading'
-  const label = number.getAttribute('aria-label') || 'views'
+  const label = number.getAttribute('aria-label') || '阅读次数'
   const count = await recordPageview(element.dataset.server || '', element.dataset.path || '')
   if (!element.isConnected) return
   element.dataset.pageviewState = count === null ? 'error' : 'loaded'
-  number.textContent = count === null ? '—' : count.toLocaleString()
-  number.setAttribute('aria-label', count === null ? `${label}: unavailable` : `${label}: ${count}`)
-  if (count === null) number.title = 'View count temporarily unavailable'
+  number.textContent = count === null ? '—' : count.toLocaleString('zh-CN')
+  number.setAttribute('aria-label', count === null ? `${label}：暂不可用` : `${label}：${count}`)
+  if (count === null) number.title = '访问统计暂不可用'
 }

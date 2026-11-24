@@ -3,12 +3,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { config } from '@/site-config'
 ---
 
-<BaseLayout title="Search" description="Full-text site search" noindex>
+<BaseLayout title="搜索" description="站内全文搜索" noindex>
   <div class="animate not-prose mx-auto max-w-2xl">
     <header class="mb-6">
-      <h1 class="font-serif text-3xl font-semibold">Search</h1>
+      <h1 class="font-serif text-3xl font-semibold">搜索</h1>
       <p class="mt-2 text-sm text-ink-soft">
-        Search all posts from a local index (no external service)
+        通过本地索引搜索全部文章，无需外部服务
       </p>
     </header>
 
@@ -17,7 +17,7 @@ import { config } from '@/site-config'
         <>
           <div class="relative">
             <label for="search-input" class="sr-only">
-              Search posts
+              搜索文章
             </label>
             <span
               class="i-lucide-search absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-ink-soft"
@@ -26,7 +26,7 @@ import { config } from '@/site-config'
             <input
               id="search-input"
               type="search"
-              placeholder="Search posts, e.g. astro, theme…"
+              placeholder="搜索文章，例如：写作、输入法……"
               autocomplete="off"
               aria-controls="search-results"
               autofocus
@@ -43,7 +43,7 @@ import { config } from '@/site-config'
           <ul id="search-results" class="mt-6 flex flex-col" />
         </>
       ) : (
-        <p class="py-10 text-center text-ink-soft">Search is disabled in the configuration.</p>
+        <p class="py-10 text-center text-ink-soft">站内搜索暂未开启。</p>
       )
     }
   </div>
@@ -91,18 +91,18 @@ import { config } from '@/site-config'
       const query = q.trim().toLowerCase()
       if (!query) {
         list!.innerHTML = ''
-        status!.textContent = 'Type to search…'
+        status!.textContent = '输入关键词开始搜索……'
         return
       }
       if (!index) {
         list!.innerHTML = ''
         status!.textContent = loadFailed
-          ? 'Failed to load search index. Please reload to try again.'
-          : 'Loading index…'
+          ? '搜索索引加载失败，请刷新页面后重试。'
+          : '正在加载搜索索引……'
         return
       }
       const hits = searchPosts(index, query)
-      status!.textContent = `${hits.length} results found`
+      status!.textContent = `找到 ${hits.length} 篇文章`
       list!.innerHTML = hits.length
         ? hits
             .map(
@@ -110,7 +110,7 @@ import { config } from '@/site-config'
             <li class="post-row">
               <a href="${BASE}blog/${escapeHtml(item.slug.split('/').map(encodeURIComponent).join('/'))}" class="group block">
                 <h2 class="font-serif text-xl font-semibold leading-snug transition-colors group-hover:text-accent">${highlight(item.title, query)}</h2>
-                <time class="mt-2 block text-xs text-ink-soft tabular-nums">${new Date(item.date).toLocaleDateString()}</time>
+                <time class="mt-2 block text-xs text-ink-soft tabular-nums">${new Date(item.date).toLocaleDateString('zh-CN')}</time>
                 <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-soft">${snippet(item, query)}</p>
                 ${
                   item.tags.length
@@ -123,7 +123,7 @@ import { config } from '@/site-config'
             </li>`
             )
             .join('')
-        : '<li class="py-12 text-center text-ink-soft">No matching posts</li>'
+        : '<li class="py-12 text-center text-ink-soft">没有找到匹配的文章</li>'
     }
 
     let timer: number | undefined
@@ -132,7 +132,7 @@ import { config } from '@/site-config'
       timer = window.setTimeout(() => render(input.value), 120)
     })
 
-    status.textContent = 'Loading index…'
+    status.textContent = '正在加载搜索索引……'
     fetch(`${BASE}search-index.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`Search index request failed: ${r.status}`)
@@ -144,7 +144,7 @@ import { config } from '@/site-config'
       })
       .catch(() => {
         loadFailed = true
-        status!.textContent = 'Failed to load search index. Please reload to try again.'
+        status!.textContent = '搜索索引加载失败，请刷新页面后重试。'
       })
   }
 </script>

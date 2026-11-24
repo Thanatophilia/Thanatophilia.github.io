@@ -67,7 +67,7 @@
 }
 #waline .wl-reaction-votes:after {
   margin-left: 0.25em;
-  content: 'Like(s)';
+  content: '赞';
   display: inline-block;
   clear: both;
   border: 0;

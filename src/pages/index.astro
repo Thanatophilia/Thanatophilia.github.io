@@ -103,11 +103,11 @@ const socialItems = Object.entries(config.footer.social ?? {}).map(([key, item])
     <!-- Recent posts -->
     {
       recent.length > 0 && (
-        <section aria-label="Posts" class="not-prose mb-16">
+        <section aria-label="文章" class="not-prose mb-16">
           <div class="mb-5 flex items-end justify-between">
-            <h2 class="font-serif text-xl font-normal">Posts</h2>
+            <h2 class="font-serif text-xl font-normal">文章</h2>
             <a href={withBase('/blog')} class="link-ink text-sm" data-astro-prefetch>
-              More posts →
+              更多文章 →
             </a>
           </div>
           <div class="flex flex-col">
@@ -123,12 +123,12 @@ const socialItems = Object.entries(config.footer.social ?? {}).map(([key, item])
     {
       education.length > 0 && (
         <section
-          aria-label="Education"
+          aria-label="教育经历"
           class="animate not-prose mb-16"
           style="animation-delay: 120ms"
         >
           <div class="mb-5 flex items-end justify-between">
-            <h2 class="font-serif text-xl font-normal">Education</h2>
+            <h2 class="font-serif text-xl font-normal">教育经历</h2>
           </div>
           <div class="paper-card divide-y divide-line overflow-hidden">
             {education.map((item) => (
@@ -152,9 +152,9 @@ const socialItems = Object.entries(config.footer.social ?? {}).map(([key, item])
     <!-- Skills -->
     {
       skills.length > 0 && (
-        <section aria-label="Skills" class="animate not-prose mb-16" style="animation-delay: 180ms">
+        <section aria-label="技能" class="animate not-prose mb-16" style="animation-delay: 180ms">
           <div class="mb-5 flex items-end justify-between">
-            <h2 class="font-serif text-xl font-normal">Skills</h2>
+            <h2 class="font-serif text-xl font-normal">技能</h2>
           </div>
           <div class="flex flex-col gap-5">
             {skills.map((group) => (
@@ -177,11 +177,11 @@ const socialItems = Object.entries(config.footer.social ?? {}).map(([key, item])
     <!-- Tags (optional) -->
     {
       showTags && tags.length > 0 && (
-        <section aria-label="Tags" class="animate not-prose mb-16" style="animation-delay: 240ms">
+        <section aria-label="标签" class="animate not-prose mb-16" style="animation-delay: 240ms">
           <div class="mb-5 flex items-end justify-between">
-            <h2 class="font-serif text-xl font-normal">Tags</h2>
+            <h2 class="font-serif text-xl font-normal">标签</h2>
             <a href={withBase('/tags')} class="link-ink text-sm" data-astro-prefetch>
-              All tags →
+              全部标签 →
             </a>
           </div>
           <div class="flex flex-wrap gap-x-4 gap-y-2">
@@ -199,11 +199,11 @@ const socialItems = Object.entries(config.footer.social ?? {}).map(([key, item])
     <!-- Friends (optional) -->
     {
       showFriends && config.friends.length > 0 && (
-        <section aria-label="Friends" class="animate not-prose" style="animation-delay: 300ms">
+        <section aria-label="友链" class="animate not-prose" style="animation-delay: 300ms">
           <div class="mb-5 flex items-end justify-between">
-            <h2 class="font-serif text-xl font-normal">Friends</h2>
+            <h2 class="font-serif text-xl font-normal">友链</h2>
             <a href={withBase('/links')} class="link-ink text-sm" data-astro-prefetch>
-              All friends →
+              全部友链 →
             </a>
           </div>
           <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">

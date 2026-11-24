@@ -157,7 +157,7 @@ export const config: Config = {
     showQuote: true,
     copyright: `© 2026 - ${new Date().getFullYear()} Thanatophilia`,
     links: [
-      { title: 'RSS', url: '/rss.xml' }
+      { title: 'RSS 订阅', url: '/rss.xml' }
     ],
     social: {
       github: { label: 'GitHub', url: 'https://github.com/Thanatophilia' }
@@ -172,7 +172,7 @@ export const config: Config = {
   home: {
     hero: {
       tagline: '创作者 / 写作者 / 学习者',
-      location: 'China',
+      location: '中国',
       about:
         '你好，我是 Thanatophilia，一个刚刚上路的创作者。\n\n这里是我的地方——用来记录想法、学习与生活。写作是我认识世界的方式，也是我留给未来自己的信。\n\n还在摸索，慢慢来。',
       buttons: [{ title: '更多关于我', link: '/about' }]

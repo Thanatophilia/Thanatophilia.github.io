@@ -80,7 +80,7 @@ test('GET-only fallback preserves the exact encoded counter path and checks its 
 test('both counters display an em dash on failure, zero on success, and initialize only once', async (t) => {
   let payload = null
   const fetchMock = t.mock.method(globalThis, 'fetch', async () => response(payload))
-  for (const label of ['views', 'total visits']) {
+  for (const label of ['阅读次数', '总访问量']) {
     for (const value of [null, 0, 123]) {
       payload = value
       const attributes = { 'aria-label': label }
@@ -94,7 +94,7 @@ test('both counters display an em dash on failure, zero on success, and initiali
       const element = {
         dataset: {
           server: 'https://counter.example',
-          path: label === 'views' ? '/blog/post' : '/site-pv'
+          path: label === '阅读次数' ? '/blog/post' : '/site-pv'
         },
         isConnected: true,
         querySelector: () => number
@@ -103,11 +103,11 @@ test('both counters display an em dash on failure, zero on success, and initiali
       await updatePageview(element)
       await updatePageview(element)
       assert.equal(fetchMock.mock.callCount(), before + 1)
-      assert.equal(number.textContent, value === null ? '—' : value.toLocaleString())
+      assert.equal(number.textContent, value === null ? '—' : value.toLocaleString('zh-CN'))
       assert.equal(element.dataset.pageviewState, value === null ? 'error' : 'loaded')
       assert.equal(
         attributes['aria-label'],
-        value === null ? `${label}: unavailable` : `${label}: ${value}`
+        value === null ? `${label}：暂不可用` : `${label}：${value}`
       )
     }
   }

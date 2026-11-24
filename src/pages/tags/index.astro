@@ -6,22 +6,22 @@ import { withBase } from '@/utils'
 const tags = getUniqueTagsWithCount(await getBlogCollection())
 ---
 
-<BaseLayout title="Tags" description={`${tags.length} tags`}>
+<BaseLayout title="标签" description={`${tags.length} 个标签`}>
   <div class="animate not-prose">
     <header class="mb-8">
-      <h1 class="font-serif text-3xl font-semibold">Tags</h1>
-      <p class="mt-2 text-sm text-ink-soft">{tags.length} tags</p>
+      <h1 class="font-serif text-3xl font-semibold">标签</h1>
+      <p class="mt-2 text-sm text-ink-soft">{tags.length} 个标签</p>
     </header>
 
     {
       tags.length === 0 ? (
-        <p class="py-12 text-center text-ink-soft">No tags yet.</p>
+        <p class="py-12 text-center text-ink-soft">暂无标签。</p>
       ) : (
         <div class="flex flex-wrap gap-x-5 gap-y-3">
           {tags.map(([tag, count]) => (
             <a href={withBase(`/tags/${tag}`)} class="tag-link !text-sm" data-astro-prefetch>
               #{tag}
-              <span class="font-mono text-xs">{count}</span>
+              <span class="font-mono text-xs">{count} 篇</span>
             </a>
           ))}
         </div>

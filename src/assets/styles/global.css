@@ -219,7 +219,7 @@ html.dark .astro-code pre span {
       display: none;
     }
     & .success::before {
-      content: 'Copied!';
+      content: '已复制！';
       position: absolute;
       right: 100%;
       top: 0;
@@ -303,7 +303,7 @@ html.dark .astro-code pre span {
       transform: rotate(180deg);
     }
     & .desc::before {
-      content: 'Collapse';
+      content: '收起';
     }
   }
   &.collapsed {
@@ -316,7 +316,7 @@ html.dark .astro-code pre span {
       border: 1px solid hsl(var(--line) / 1);
       border-radius: 0.5rem;
       & .desc::before {
-        content: 'Show all';
+        content: '展开全部';
       }
       & svg {
         transform: rotate(0deg);

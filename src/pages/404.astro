@@ -3,13 +3,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { withBase } from '@/utils'
 ---
 
-<BaseLayout title="Page not found" noindex>
+<BaseLayout title="页面未找到" noindex>
   <div class="animate not-prose flex flex-col items-center gap-6 py-20 text-center">
     <p class="font-serif text-7xl font-semibold text-accent">404</p>
-    <p class="text-ink-soft">There is nothing you are looking for on this page of paper.</p>
+    <p class="text-ink-soft">这张纸上没有你要找的内容。</p>
     <a href={withBase('/')} class="chip !px-4 !py-1.5 text-sm" data-astro-prefetch>
       <span class="i-lucide-house size-4" aria-hidden="true"></span>
-      Back to home
+      返回首页
     </a>
   </div>
 </BaseLayout>
