@@ -37,7 +37,7 @@ jobs:
         run: pnpm build
         env:
           # 自定义域名下的正式站点地址（canonical / og:url / sitemap / RSS 都取这里）
-          SITE_URL: https://xyu-ning.loc.cc
+          SITE_URL: https://thanatophilia.abc.sd
           BASE_PATH: ''
 
       - name: Upload artifact

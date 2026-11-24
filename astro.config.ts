@@ -35,7 +35,7 @@ const base = process.env.BASE_PATH || ''
 export default defineConfig({
   // Real site URL — also injected by the GitHub Pages deploy workflow.
   // Needed for sitemap & canonical links.
-  site: process.env.SITE_URL || 'https://thanatophilia.github.io',
+  site: process.env.SITE_URL || 'https://thanatophilia.abc.sd',
 
   // Sub-path base (empty locally & for root deploys).
   base: base || undefined,
