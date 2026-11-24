@@ -198,18 +198,5 @@ export const config: Config = {
     server: ''
   },
 
-  friends: [
-    {
-      name: 'Astro',
-      desc: 'The web framework for content-driven websites.',
-      url: 'https://astro.build',
-      avatar: 'https://astro.build/favicon.svg'
-    },
-    {
-      name: 'UnoCSS',
-      desc: 'The instant atomic CSS engine.',
-      url: 'https://unocss.dev',
-      avatar: 'https://unocss.dev/favicon.svg'
-    }
-  ]
+  friends: []
 }
